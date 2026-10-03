@@ -1,0 +1,24 @@
+title: Access to Lookalike Domain Used in Mailbox Verification Phishing
+id: 6f1d2a64-3c1e-4b8a-9a55-0d7a2e5b1c01
+status: experimental
+description: Detects web proxy requests to the lookalike domain used in simulated case PH-2026-001.
+author: Daniel Guy
+date: 2026/10/02
+references:
+    - ../report/investigation-report.md
+tags:
+    - attack.initial_access
+    - attack.t1566.002
+    - attack.t1598.003
+logsource:
+    category: proxy
+detection:
+    selection_domain:
+        cs-host|endswith:
+            - 'brlghtline-it.example'
+    selection_path:
+        c-uri|contains: '/login/verify'
+    condition: selection_domain or selection_path
+falsepositives:
+    - Security staff investigating the domain
+level: high

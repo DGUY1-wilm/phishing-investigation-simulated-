@@ -1,0 +1,48 @@
+Received: from mail-gw.brightline.example (mail-gw.brightline.example [198.51.100.10])
+	by mx.brightline.example with ESMTPS id a1b2c3d4
+	for <j.alvarez@brightline.example>; Thu, 1 Oct 2026 14:22:09 -0400
+Received: from srv-45.brlghtline-it.example (srv-45.brlghtline-it.example [203.0.113.45])
+	by mail-gw.brightline.example with ESMTP id x9y8z7w6
+	for <j.alvarez@brightline.example>; Thu, 1 Oct 2026 14:22:05 -0400
+Authentication-Results: mx.brightline.example;
+	spf=pass (sender IP is 203.0.113.45) smtp.mailfrom=brlghtline-it.example;
+	dkim=pass header.d=brlghtline-it.example;
+	dmarc=pass header.from=brlghtline-it.example
+Return-Path: <bounce@brlghtline-it.example>
+From: "Brightline IT Helpdesk" <no-reply@brlghtline-it.example>
+Reply-To: "IT Recovery" <helpdesk-recovery@freemail.example>
+To: j.alvarez@brightline.example
+Subject: [Action Required] Mailbox storage 98% full - verify within 24 hours
+Date: Thu, 01 Oct 2026 14:21:58 -0400
+Message-ID: <20261001142158.7731@srv-45.brlghtline-it.example>
+X-Mailer: PHPMailer 6.5.0
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="BOUNDARY-SIM-001"
+
+--BOUNDARY-SIM-001
+Content-Type: text/plain; charset="UTF-8"
+
+Hello,
+
+Your Brightline mailbox is 98% full. Incoming mail will be blocked
+and some messages may be permanently deleted.
+
+You must verify your account within 24 hours to keep access:
+https://portal.brightline.example/mailbox/verify
+
+Brightline IT Helpdesk
+This is an automated message. Do not reply.
+
+--BOUNDARY-SIM-001
+Content-Type: text/html; charset="UTF-8"
+
+<html><body style="font-family:Arial">
+<p>Hello,</p>
+<p>Your Brightline mailbox is <b>98% full</b>. Incoming mail will be blocked
+and some messages may be <b>permanently deleted</b>.</p>
+<p>You must verify your account within <b>24 hours</b> to keep access:</p>
+<p><a href="https://brlghtline-it.example/login/verify?uid=j.alvarez&amp;t=8f3a1c">https://portal.brightline.example/mailbox/verify</a></p>
+<p>Brightline IT Helpdesk<br>This is an automated message. Do not reply.</p>
+</body></html>
+
+--BOUNDARY-SIM-001--

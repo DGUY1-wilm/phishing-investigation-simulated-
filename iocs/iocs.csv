@@ -1,0 +1,7 @@
+type,value,context
+file_sha256,8075ea6522df1018bae1c2edc21c21b20a6507731abe4169ccf470f3bc07a753,evidence file
+ip,203[.]0[.]113[.]45,first external hop in Received chain
+domain,brlghtline-it[.]example,From domain
+domain,freemail[.]example,Reply-To domain
+url,hxxps://brlghtline-it[.]example/login/verify?uid=j[.]alvarez&t=8f3a1c,HTML anchor href
+url,hxxps://portal[.]brightline[.]example/mailbox/verify,plain text body (decoy)

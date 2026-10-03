@@ -1,0 +1,181 @@
+GETTING STARTED
+Phishing Investigation Simulation
+==================================================
+
+WHAT THIS IS
+This project is a practice investigation of a fake phishing email.
+Phishing is when a scammer sends an email that pretends to be someone
+you trust, like your IT department, to trick you into giving up your
+password.
+
+Everything here is made up. The email, company, websites, and
+addresses are fictional and cannot harm your computer. You are only
+reading and analyzing a text file.
+
+The project includes a small program that reads the fake email and
+points out the warning signs, the way a security analyst would.
+
+TIME NEEDED: about 10 minutes
+
+WHAT YOU NEED
+- A computer (Windows, Mac, or Linux)
+- Python, a free program that runs the analysis tool
+  (step 1 shows how to check if you have it)
+- This project folder, unzipped
+
+--------------------------------------------------
+STEP 1: CHECK IF YOU HAVE PYTHON
+--------------------------------------------------
+
+WINDOWS
+1. Press the Windows key, type "cmd", and press Enter.
+   A black window opens. This is called the Command Prompt.
+2. Type this and press Enter:
+      python --version
+3. If you see something like "Python 3.11.4", you are ready.
+   Go to Step 2.
+4. If you see an error, install Python:
+   - Go to python.org/downloads
+   - Click the big yellow Download button
+   - Open the file you downloaded
+   - IMPORTANT: on the first screen, tick the box that says
+     "Add Python to PATH", then click Install Now
+   - Close the black window and open a new one, then try
+     step 2 again
+
+MAC
+1. Press Command + Space, type "Terminal", and press Enter.
+2. Type this and press Enter:
+      python3 --version
+3. If you see something like "Python 3.11.4", you are ready.
+4. If not, install it from python.org/downloads, then try again.
+
+--------------------------------------------------
+STEP 2: UNZIP THE PROJECT
+--------------------------------------------------
+Find the file called phishing-investigation.zip.
+
+WINDOWS: Right-click it, choose "Extract All", then click Extract.
+MAC: Double-click it.
+
+You now have a folder called "phishing-investigation".
+
+--------------------------------------------------
+STEP 3: OPEN THE BLACK WINDOW INSIDE THE FOLDER
+--------------------------------------------------
+
+WINDOWS
+1. Open the phishing-investigation folder.
+2. Click once in the address bar at the top of the window
+   (where the folder path is shown).
+3. Type "cmd" and press Enter.
+   A black window opens, already pointed at the right folder.
+
+MAC
+1. Right-click the phishing-investigation folder.
+2. Choose "New Terminal at Folder".
+   If you do not see that option, open System Settings,
+   go to Keyboard > Keyboard Shortcuts > Services, and turn on
+   "New Terminal at Folder".
+
+--------------------------------------------------
+STEP 4: RUN THE ANALYSIS
+--------------------------------------------------
+Copy the line for your computer, paste it into the black window,
+and press Enter.
+
+WINDOWS:
+python scripts\extract_iocs.py evidence\sample.eml --legit-domain brightline.example --csv iocs\iocs.csv
+
+MAC or LINUX:
+python3 scripts/extract_iocs.py evidence/sample.eml --legit-domain brightline.example --csv iocs/iocs.csv
+
+TIP: To paste in the black window on Windows, right-click.
+On Mac, press Command + V.
+
+--------------------------------------------------
+STEP 5: READ THE RESULTS
+--------------------------------------------------
+The program prints several sections. Here is what each one means.
+
+HEADER SUMMARY
+Who the email says it is from, the subject, and the date.
+
+AUTHENTICATION
+Three checks (SPF, DKIM, DMARC) that email systems use to verify a
+sender. They all say "pass" here. That surprises most people. It does
+not mean the email is safe. It only means the scammer properly set
+up their own look-alike website. This is a key lesson of the project.
+
+ORIGIN
+The internet address the email really came from. It is shown in
+a safe format like 203[.]0[.]113[.]45 so nobody clicks it by accident.
+
+LINKS
+This is the most important part. The email SHOWS one web address but
+secretly sends you to a different one. Look at the two lines:
+   text: what you would see in the email
+   href: where the link would really take you
+
+FINDINGS
+A plain list of the red flags the program found, such as:
+   - The sender's website name is almost the same as the real
+     company (brlghtline instead of brightline)
+   - The reply address goes to a free email account
+   - Scary, urgent wording ("within 24 hours", "permanently deleted")
+
+--------------------------------------------------
+STEP 6: READ THE FULL WRITE-UP
+--------------------------------------------------
+Open this file with Notepad, TextEdit, or any text editor:
+
+   report/investigation-report.md
+
+It explains the whole case the way a security team would:
+what happened, a timeline, the evidence, the verdict, and what
+should be done about it.
+
+You can also look at:
+   evidence/sample.eml       The fake email itself
+   iocs/iocs.csv             A list of the warning-sign data (open in Excel)
+   detection/                Rules a security team would use to catch this
+
+--------------------------------------------------
+TROUBLESHOOTING
+--------------------------------------------------
+
+"python is not recognized" (Windows)
+   Python is not installed, or "Add Python to PATH" was not ticked.
+   Reinstall it from python.org and tick that box.
+
+"python3: command not found" (Mac)
+   Install Python from python.org/downloads, then open a new
+   Terminal window.
+
+"No such file or directory"
+   The black window is not in the right folder. Redo Step 3.
+   You should see "phishing-investigation" in the window.
+
+Nothing happens or you see an error
+   Check that you copied the whole command on one line.
+
+--------------------------------------------------
+IS THIS SAFE?
+--------------------------------------------------
+Yes. The program only reads a text file and prints a summary. It does
+not open any links, connect to the internet, or change anything on
+your computer except writing the file iocs/iocs.csv.
+
+The email and websites are fictional (.example addresses are reserved
+for practice and do not exist on the real internet).
+
+--------------------------------------------------
+REAL-LIFE TAKEAWAYS
+--------------------------------------------------
+1. Hover over a link before clicking. Check where it really goes.
+2. Be suspicious of urgent threats ("do this in 24 hours or lose access").
+3. Check the sender's domain spelling carefully, letter by letter.
+4. Real IT teams do not ask you to verify your password through
+   an emailed link.
+5. If unsure, report the email to your IT or security team
+   instead of clicking.
