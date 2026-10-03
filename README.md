@@ -1,5 +1,6 @@
 # Phishing Investigation: Fake IT Mailbox Verification (Simulated)
 
+See GETTING_STARTED for beginner friendly simulation setup and execution. 
 A SOC style investigation of a simulated credential harvesting email. The email, domains, and IP addresses are fictional and use reserved example ranges (.example domains, RFC 5737 IPs). Nothing here is a live threat.
 
 ## Summary
