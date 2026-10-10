@@ -21,7 +21,6 @@ A SOC style investigation of a simulated credential harvesting email. The email,
 - scripts/extract_iocs.py: parses the email, flags suspicious traits, outputs defanged IOCs
 - iocs/iocs.csv: indicator table produced by the script
 - detection/: a Sigma rule and example Splunk queries
-- screenshots/: add your own screenshots of the script output and any tools you use
 
 ## How to run
 
